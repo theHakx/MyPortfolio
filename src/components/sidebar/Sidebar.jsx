@@ -1,4 +1,4 @@
-import './Sidebar.scss'
+import './sidebar.scss'
 import { delay, motion, transform } from 'framer-motion'
 import ToggleButton from './toggleButton/ToggleButton'
 import Links from './links/Links'

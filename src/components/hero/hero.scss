@@ -1,0 +1,133 @@
+@import '../../app.scss';
+
+.hero{
+    height: calc(100vh - 100px);
+    background: linear-gradient(131deg,#000000,#532c00,#000104,#00047a,#000000);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    overflow: hidden;
+    position: relative;
+
+    @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+    .wrapper{
+        max-width: 1366px;
+        height: 100%;
+        margin: auto;
+
+        .textContainer{
+            height: 100%;
+            display: flex;
+            width: 50%;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+
+            @include mobile{
+                height: 50%;
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+            
+
+            h2{
+                font-size: 30px;
+                color: rebeccapurple;
+                letter-spacing: 10px;
+
+                @include mobile{
+                    font-size: 15px;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+
+            h1{
+                font-size: 88px;
+
+                @include mobile{
+                  font-size: 36px;
+                  gap: 20px;
+                  align-items: center;
+                  text-align: center;
+                  
+                }
+                
+            }
+
+            .buttons{
+                @include mobile{
+                    align-items: center;
+                    text-align: center;
+                }
+                button{
+                    padding: 20px;
+                    border: 1px solid whitesmoke;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: white;
+                    margin-right: 20px;
+                    font-weight: 300;
+
+                    
+                }
+                
+            }
+            .cvDownload{
+                display: flex;
+                align-items: center;
+                z-index: 999;
+                cursor: pointer;                gap: 25px;
+
+                .cvButton{
+                    background-color: transparent;
+                    color: white;
+                    padding: 15px;
+                    border-radius: 10px;
+                    border-color: white;
+                    z-index: 999;
+                    cursor: pointer;
+                }
+
+                img{
+                    width: 49px;
+                    cursor: pointer !important;
+                  
+                }
+            }
+
+           
+        }
+    }
+
+
+
+    .imageContainer{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .slidingTextContainer{
+        position: absolute;
+        font-size: 50vh;
+        bottom: -120px;
+        white-space: nowrap;
+        color:#ffffff09;
+        width: 50%;
+        font-weight: bold;
+    }
+}

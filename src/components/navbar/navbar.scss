@@ -1,0 +1,61 @@
+@import '../../app.scss';
+
+
+.navbar{
+  height: 100px;
+  background: linear-gradient(131deg,#000000,#000000 ,#000000 ,#000000 ,#000000 ,#000000 ,#000000 ,#000000 ,#00014a ,#00026b ,#000000 ,#000000 ,#000000 ,#000000 ,#000000);
+  background-size: 240% 240%;
+  animation: gradient-animation 20s ease-in-out infinite;
+  overflow: hidden;
+  position: relative;
+
+  @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+      20% {
+        background-position: 100% 20%;
+      }
+      40% {
+        background-position: 100% 40%;
+      }
+      60% {
+        background-position: 100% 60%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+  }
+
+  .wrapper{
+      max-width: 1336px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+
+      @include mobile{
+        justify-content: flex-end;
+        padding: 20px;
+      }
+
+      span{
+          font-weight: bold;
+          
+          @include mobile{
+            display: none;
+          }
+      }
+
+      .socials{
+          display: flex;
+          gap: 20px;
+
+          img{
+              width: 18px;
+              height: 18px;
+          }
+      }
+  }
+}

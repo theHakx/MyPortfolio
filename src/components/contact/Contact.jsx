@@ -55,7 +55,7 @@ const Contact = () => {
         <motion.h1 variants={variants} whileHover={{color:'orange'}}>Let's Get It</motion.h1>
         <motion.div className="item" variants={variants}>
             <h2>Mail</h2>
-            <motion.span whileHover={{color : 'orange'}}>Hakapericlive1996@gmail.com.com</motion.span>
+            <motion.span whileHover={{color : 'orange'}}>Hakapericlive1996@gmail.com</motion.span>
         </motion.div>
         <motion.div className="item" variants={variants}>
             <h2>Address</h2>

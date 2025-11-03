@@ -129,5 +129,11 @@
         color:#ffffff09;
         width: 50%;
         font-weight: bold;
+        @include mobile{
+            font-size: 18vh;
+            bottom: -40px;
+            width: 100%;
+            text-align: center;
+        }
     }
 }

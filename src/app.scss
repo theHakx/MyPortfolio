@@ -26,17 +26,28 @@ section{
 }
 
 @mixin mobile{
-    @media (max-width:738px){
-        @content
+    @media (max-width:768px){
+        @content;
     }
 }
 @mixin tablet{
-    @media (max-width:1024){
-        @content
+    @media (max-width:1024px){
+        @content;
     }
 }
 @mixin desktop{
-    @media (max-width:138px){
-        @content
+    @media (min-width:1366px){
+        @content;
+    }
+}
+
+// Mobile overrides for section height and scroll snapping
+@include mobile {
+    section{
+        height: auto;
+        min-height: 100svh;
+    }
+    html{
+        scroll-snap-type: none;
     }
 }

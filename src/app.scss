@@ -41,13 +41,9 @@ section{
     }
 }
 
-// Mobile overrides for section height and scroll snapping
+// Mobile overrides for section height (keep snap scrolling on mobile)
 @include mobile {
     section{
-        height: auto;
-        min-height: 100svh;
-    }
-    html{
-        scroll-snap-type: none;
+        height: 100svh;
     }
 }

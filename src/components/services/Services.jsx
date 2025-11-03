@@ -29,9 +29,9 @@ const Services = () => {
     <motion.div
      className='services' 
      variants ={variants}
-      initial = 'initial' 
-      whileInView = 'animate'
-      viewport={{ margin: '-20% 0px -20% 0px' }}
+      initial={false}
+      whileInView='animate'
+      viewport={{ margin: '0px 0px -35% 0px' }}
       ref={ref}
       >
         <motion.div className="textContainer" variants ={variants}>

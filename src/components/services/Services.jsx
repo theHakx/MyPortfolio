@@ -29,10 +29,10 @@ const Services = () => {
     <motion.div
      className='services' 
      variants ={variants}
-      initial = 'initial' 
-      whileInView = 'animate'
+      initial={false}
+      whileInView='animate'
+      viewport={{ margin: '0px 0px -35% 0px' }}
       ref={ref}
-      animate={isInView && 'animate'}
       >
         <motion.div className="textContainer" variants ={variants}>
             <p>I am all about about HTML,SCSS and JavaScript 

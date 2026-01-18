@@ -1,3 +1,5 @@
+@import '../../app.scss';
+
 .contact{
     height: 100%;
     max-width: 1366px;
@@ -55,6 +57,28 @@
                 cursor: pointer;
             }
 
+        }
+    }
+}
+
+// Mobile overrides
+@include mobile{
+    .contact{
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 15px;
+        max-width: 95vw;
+        .textContainer{
+            align-items: center;
+            text-align: center;
+            h1{ font-size: 42px; line-height: 1.1; }
+        }
+        .formContainer{
+            width: 100%;
+            .phoneSVG{ display: none; }
+            form{ width: 100%; }
+            input, textarea{ font-size: 16px; }
+            button{ width: 100%; }
         }
     }
 }

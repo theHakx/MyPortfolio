@@ -1,7 +1,7 @@
 @import '../../app.scss';
 
 .parallax{
-    width: 100%;
+    width: 100vw; // ensure full-bleed background on desktop
     height: 100%;
     position: relative;
     display: flex;
@@ -10,56 +10,90 @@
     overflow: hidden;
 
 
-    h1{
-        font-size: 100px;
+    // Desktop animated words
+    .desktopWords{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: nowrap; // prevent wrapping to a column
+        background: transparent;
+        
+        .word{
+            font-size: 8vw;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            text-shadow: 0 6px 32px rgba(0,0,0,0.35);
+            white-space: nowrap; // keep each word intact
+        }
+    }
 
-        @include mobile{
-            font-size: 72px;
+    // Remove layered PNG effects entirely
+    .mountains, .planets, .stars{ display: none !important; }
+
+    // Mobile-only stacked titles
+    .mobileTitle{
+        display: none;
+    }
+    @include mobile{
+        .desktopWords{ display: none; }
+        .mobileTitle.services{
+            position: relative;
+            z-index: 5;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
             text-align: center;
+            padding: 20px 10px;
+            
+            span{
+                font-size: 22vw;
+                font-weight: 800;
+                letter-spacing: 0.06em;
+                color: rgba(255,255,255,0.9);
+                text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            }
+        }
+        .mobileTitle.portfolio{
+            position: relative;
+            z-index: 5;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            padding: 20px 10px;
 
+            span{
+                font-size: 22vw;
+                font-weight: 800;
+                letter-spacing: 0.06em;
+                color: rgba(255,255,255,0.9);
+                text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            }
         }
     }
+}
 
-    .mountains{
-        background-image: url('./mountains.png');
-        background-size: cover;
-        background-position: bottom;
-        width:100% ;
-        height:100% ;
-        position: absolute;
-        z-index: 3;
+// subtle breathing animation
+@keyframes breathOpacity {
+    0% { opacity: 1; }
+    50% { opacity: 0.85; }
+    100% { opacity: 1; }
+}
+.breath{
+    animation: breathOpacity 3.2s ease-in-out infinite;
+}
 
-        @include mobile{
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-    }
-    .planets{
-        background-image: url('./planets.png');
-        background-size: cover;
-        background-position: bottom;
-        width:100% ;
-        height:100% ;
-        position: absolute;
-        z-index: 2;
-
-        @include mobile{
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-    }
-    .stars{
-        background-image: url('./stars.png');
-        background-size: cover;
-        background-position: bottom;
-        width:100% ;
-        height:100% ;
-        position: absolute;
-        z-index: 1;
-
-        @include mobile{
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
+// Desktop: remove gradient background to avoid vertical color band behind title
+@include desktop{
+    .parallax{
+        background: transparent !important;
     }
 }
